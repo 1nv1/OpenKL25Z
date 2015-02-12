@@ -1,6 +1,9 @@
 Introduction
 ============
 
+!!! Warning !!!
+This project is under hard construction. If well is possible to use it, I do not recommend for any without advance experience with Linux/ARM/GCC.
+
 The goal of this project is make a clean and single framework to learn about microcontroller Cortex-M0. 
 The project is based on [bare-metal ARM](https://github.com/payne92/bare-metal-arm). In this moment I work actively in add the funcionality that I want. This is a "bare metal" runtime for the 
 [Freescale Freedom FRDM-KL25Z](http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=FRDM-KL25Z) 
