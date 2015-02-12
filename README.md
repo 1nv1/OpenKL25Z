@@ -65,6 +65,20 @@ In this case:
 History
 -------
 
+*(02/12/2015)
+    *A new repository was created and it is called OpenKL25Z.
+    *Now the main.c has a experimental example using state-machines and 
+    protothreads.
+
+*(01/05/2015)
+    *The structure has been improved on experimental branch (at old repo, inspired for CIAA's firmware).
+
+*0.0.1 (08/26/2014)
+    *ADC full support.
+    *It adds big quantity of documentation with doxygen.
+    *Better performance of size using newlib-nano in compilation.
+
+
 * 0.0.0 (07/26/2014)
     * Warning of readme about the goals and status of project.
     * For the "ADC" support  I use CooCox development files as base. When I get the
