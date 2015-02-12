@@ -1,0 +1,78 @@
+PROJECT_NAME            = "OpenKL25Z4"
+OUTPUT_LANGUAGE         = English
+OUTPUT_DIRECTORY        = ../branches/gh-pages/dx/
+ALIASES                 += "license=@par License:\n"
+
+# Generation of PDF, MAN, RTF disabled
+GENERATE_LATEX          = NO
+LATEX_CMD_NAME          = latex
+PAPER_TYPE              = a4
+USE_PDFLATEX            = YES
+PDF_HYPERLINKS          = YES
+GENERATE_MAN            = NO
+GENERATE_RTF            = NO
+CASE_SENSE_NAMES        = YES
+#Acento:    
+INPUT_ENCODING          = ISO-8859-1 
+INPUT                   = README.md                                     \
+                            _startup.c                                  \
+                            accel.c                                     \
+                            adc.c adc.h                                 \
+                            common.h                                    \
+                            debug.c debug.h                             \
+                            delay.c                                     \
+                            freedom.h                                   \
+                            main.c                                      \
+                            KL25Z.h                                   \
+                            ring.c                                      \
+                            syscalls.c                                  \
+                            tests.c                                     \
+                            touch.c                                     \
+                            types.h                                     \
+                            uart.c                                      \
+                            usb.c usb.h
+RECURSIVE               = NO
+QUIET                   = YES
+JAVADOC_AUTOBRIEF       = YES
+EXTRACT_ALL             = YES
+EXTRACT_PRIVATE         = YES
+EXTRACT_STATIC          = YES
+EXTRACT_LOCAL_CLASSES   = YES
+INLINE_INHERITED_MEMB   = YES
+SORT_MEMBER_DOCS        = NO
+SORT_BRIEF_DOCS         = NO
+CLASS_DIAGRAMS          = YES
+OPTIMIZE_OUTPUT_FOR_C   = YES
+ENABLE_PREPROCESSING    = YES
+MACRO_EXPANSION         = YES
+EXPAND_ONLY_PREDEF      = YES
+PREDEFINED              = "DOXYGEN_COMMENT"                             \
+                        "Spanish_dox"                                   \
+                        "__cplusplus"                                   \
+                        "_MSC_VER=1300"                                 \
+                        "OPEN_namespace(N)=namespace N {"               \
+                        "CLOSE_namespace(N)=}"                          \
+                        "USIGN_namespace(N)=using namespace N"
+EXAMPLE_PATH            = .
+GENERATE_TREEVIEW       = YES
+TREEVIEW_WIDTH          = 250
+
+# Graphic generation
+HAVE_DOT                = YES
+GRAPHICAL_HIERARCHY     = YES
+INCLUDE_GRAPH           = YES
+CALL_GRAPH              = YES
+CALLER_GRAPH            = YES
+
+# From where load images?
+IMAGE_PATH          = images 
+
+# Configuration options related to source browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+REFERENCES_LINK_SOURCE = YES
+USE_HTAGS              = NO
+VERBATIM_HEADERS       = YES
+FULL_PATH_NAMES        = NO
