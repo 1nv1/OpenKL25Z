@@ -527,8 +527,13 @@
     \brief KL25Z ADC API Reference
     @{
 */  
+/**
+    \brief Activate the clock gate for ADC0 module.
+*/
+#define adc_init() \
+    SIM_SCGC6 |= SIM_SCGC6_ADC0_MASK;
+
 void        adc_int_call_back_init              (xtEventCallback pfnCallback);
-void        adc_init                            (void);
 void        adc_primary_configuration           (uint32_t ulPowerMode, uint32_t ulClockDivide, uint32_t ulSampleTime, uint32_t ulResolution, uint32_t ulInputClock);
 void        adc_channel                         (uint32_t ulInputChannel);
 void        adc_control_1                       (uint32_t ulTrigger, uint32_t ulCompare, uint32_t ulLessGreater, uint32_t ulCompareRange, uint32_t ulAdcDMA, uint32_t ulVoltageRef);

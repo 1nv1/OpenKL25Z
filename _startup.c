@@ -148,6 +148,9 @@ void __attribute__((interrupt("IRQ"))) Default_Handler()
     fault(0b11111110);          // Blink LED and halt
 }
 
+
+
+
 /**
  * \brief The register frame pushed onto the stack during exceptions.
  */
@@ -190,161 +193,160 @@ void __attribute__((naked)) _HardFault_Handler(uint32_t lr, void *psp, void *msp
     fault(0b1111111000);            // Blink LED and halt
 }
 
-
 /* Weak definitions of handlers point to Default_Handler if not implemented */
-void NMI_Handler()              __attribute__ ((weak, alias("Default_Handler")));
-void SVC_Handler()              __attribute__ ((weak, alias("Default_Handler")));
-void PendSV_Handler()           __attribute__ ((weak, alias("Default_Handler")));
-void SysTick_Handler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void NMI_Handler()              __attribute__ ((weak, alias("Default_Handler")));
+extern void SVC_Handler()              __attribute__ ((weak, alias("Default_Handler")));
+extern void PendSV_Handler()           __attribute__ ((weak, alias("Default_Handler")));
+extern void SysTick_Handler()          __attribute__ ((weak, alias("Default_Handler")));
 /**
  * \brief DMA Channel 0 Transfer Complete and Error.
  */
-void DMA0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void DMA0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief DMA Channel 1 Transfer Complete and Error.
  */
-void DMA1_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void DMA1_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief DMA Channel 2 Transfer Complete and Error.
  */
-void DMA2_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void DMA2_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief DMA Channel 3 Transfer Complete and Error.
  */
-void DMA3_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void DMA3_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief Normal Interrupt.
  */
-void MCM_IRQHandler()           __attribute__ ((weak, alias("Default_Handler")));
+extern void MCM_IRQHandler()           __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief FTFL Interrupt.
  */
-void FTFL_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void FTFL_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief PMC Interrupt.
  */
-void PMC_IRQHandler()           __attribute__ ((weak, alias("Default_Handler")));
+extern void PMC_IRQHandler()           __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief Low Leakage Wake-up.
  */
-void LLW_IRQHandler()           __attribute__ ((weak, alias("Default_Handler")));
+extern void LLW_IRQHandler()           __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief I2C0 interrupt.
  */
-void I2C0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void I2C0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief I2C1 interrupt.
  */
-void I2C1_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void I2C1_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief SPI0 Interrupt.
  */
-void SPI0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void SPI0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief SPI1 Interrupt.
  */
-void SPI1_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void SPI1_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief UART0 Status and Error interrupt.
  */
-void UART0_IRQHandler()         __attribute__ ((weak, alias("Default_Handler")));
+extern void UART0_IRQHandler()         __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief UART1 Status and Error interrupt.
  */
-void UART1_IRQHandler()         __attribute__ ((weak, alias("Default_Handler")));
+extern void UART1_IRQHandler()         __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief UART2 Status and Error interrupt.
  */
-void UART2_IRQHandler()         __attribute__ ((weak, alias("Default_Handler")));
+extern void UART2_IRQHandler()         __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief ADC0 interrupt.
  */
-void ADC0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void ADC0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief CMP0 interrupt.
  */
-void CMP0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void CMP0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief FTM0 fault, overflow and channels interrupt.
  */
-void FTM0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void FTM0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief FTM1 fault, overflow and channels interrupt.
  */
-void FTM1_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void FTM1_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief FTM2 fault, overflow and channels interrupt.
  */
-void FTM2_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void FTM2_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief RTC Alarm interrupt.
  */
-void RTC_Alarm_IRQHandler()     __attribute__ ((weak, alias("Default_Handler")));
+extern void RTC_Alarm_IRQHandler()     __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief RTC Seconds interrupt.
  */
-void RTC_Seconds_IRQHandler()   __attribute__ ((weak, alias("Default_Handler")));
+extern void RTC_Seconds_IRQHandler()   __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief PIT timer all channels interrupt.
  */
-void PIT_IRQHandler()           __attribute__ ((weak, alias("Default_Handler")));
+extern void PIT_IRQHandler()           __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief USB interrupt.
  */
-void USBOTG_IRQHandler()        __attribute__ ((weak, alias("Default_Handler")));
+extern void USBOTG_IRQHandler()        __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief DAC0 interrupt.
  */
-void DAC0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void DAC0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief TSI0 Interrupt.
  */
-void TSI0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
+extern void TSI0_IRQHandler()          __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief MCG Interrupt.
  */
-void MCG_IRQHandler()           __attribute__ ((weak, alias("Default_Handler")));
+extern void MCG_IRQHandler()           __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief LPTimer interrupt.
  */
-void LPTimer_IRQHandler()       __attribute__ ((weak, alias("Default_Handler")));
+extern void LPTimer_IRQHandler()       __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief Port A interrupt.
  */
-void PORTA_IRQHandler()         __attribute__ ((weak, alias("Default_Handler")));
+extern void PORTA_IRQHandler()         __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief Port D interrupt.
  */
-void PORTD_IRQHandler()         __attribute__ ((weak, alias("Default_Handler")));
+extern void PORTD_IRQHandler()         __attribute__ ((weak, alias("Default_Handler")));
 
 /**
  * \brief Interrupt vector table (loaded into flash memory at 0x000).

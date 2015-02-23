@@ -16,6 +16,10 @@ char *AppStringSubmenu1[] = {
 char *AppStringSubmenu2[] = {
     "A0",
     "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
     "AccX",
     "AccY",
     "AccZ",
@@ -28,6 +32,7 @@ char *AppStringSubmenu2[] = {
 char *AppStringSubmenu3[] = {
     "About",
     "Test LED",
+    "Debug",
     "Back",
     ""
 };
@@ -102,6 +107,33 @@ void aTask (char **str, uint8_t x, uint8_t y) {
                     ClearScreen ();
                     iprintf("Done!\r\n");                   
                     break;
+                case 2:
+                    ClearScreen ();
+                    iprintf("ADC0:\r\n");
+                    iprintf("  clkgate ");
+                    PrintHex((SIM_SCGC6 & SIM_SCGC6_ADC0_MASK) >> SIM_SCGC6_ADC0_SHIFT);
+                    iprintf("\r\n");
+                    iprintf("      res ");
+                    PrintHex((ADC0_CFG1 & ADC_CFG1_MODE_MASK) >> ADC_CFG1_MODE_SHIFT);
+                    iprintf("\r\n");
+                    
+                    iprintf("LPTMR0:\r\n");
+                    iprintf("  enabled ");
+                    PrintHex((SIM_SCGC5 & SIM_SCGC5_LPTMR_MASK) >> SIM_SCGC5_LPTMR_SHIFT);
+                    iprintf("\r\n");
+                    iprintf("  counter ");
+                    PrintHex((LPTMR0_CNR & LPTMR_CNR_COUNTER_MASK) >> LPTMR_CNR_COUNTER_SHIFT);
+                    iprintf("\r\n");
+                    iprintf("  compare "); 
+                    PrintHex((LPTMR0_CMR & LPTMR_CMR_COMPARE_MASK) >> LPTMR_CMR_COMPARE_SHIFT);
+                    iprintf("\r\n");
+                    iprintf("      int "); 
+                    PrintHex((LPTMR0_CSR & LPTMR_CSR_TIE_MASK) >> LPTMR_CSR_TIE_SHIFT);
+                    iprintf("\r\n");
+                    iprintf("      clk ");
+                    PrintHex((LPTMR0_CSR & LPTMR_CSR_TMS_MASK) >> LPTMR_CSR_TMS_SHIFT);
+                    iprintf("\r\n");
+                    break;
             }
             break;
     }
@@ -109,4 +141,8 @@ void aTask (char **str, uint8_t x, uint8_t y) {
 
 void ClearScreen (void) {
     iprintf("\033[2J\033[1;1H");
+}
+
+void PrintHex (uint32_t num){
+    iprintf("%#04x", num);
 }

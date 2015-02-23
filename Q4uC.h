@@ -1,14 +1,14 @@
-#include "stdint.h"
-
-#ifndef _Q4UC_H_
-#define _Q4UC_H_
-
 /** \brief Q4uC Header file
  **
  ** Header file for Q4uC
  **
  **/
 
+
+#ifndef _Q4UC_H_
+#define _Q4UC_H_
+
+#include "stdint.h"
 /** \addtogroup _Q4uC Queue for micro-controllers
  ** @{ */
 

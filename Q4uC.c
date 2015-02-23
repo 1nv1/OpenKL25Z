@@ -8,12 +8,12 @@
 
 void Q4uC_Init (Q4uC_Queue *Q)
 {
-    uint8_t idx;
+    uint8_t i;
     Q->IdxStart = 0;
     Q->IdxEnd = 0;
     Q->IdxLen = 0;
     /* Cleanup messages queue. */
-    for (idx = 0; idx != QUEUE_SIZE; idx++) {
+    for (i = 0; i != QUEUE_SIZE; i++) {
         Q->Events[idx] = 0;
     }
     Q->Status = Q4UC_STATUS_RELEASE;

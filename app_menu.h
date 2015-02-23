@@ -53,5 +53,6 @@ extern void aTask (char **str, uint8_t x, uint8_t y);
 
 extern void InitAppMenu (void); 
 extern void ClearScreen (void);
+extern void PrintHex (uint32_t num);
 
 #endif

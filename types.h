@@ -17,6 +17,14 @@ typedef unsigned char boolean; /**< Define a boolean type, value can be \b xTRUE
 #define FALSE 0 /**< False state. */
 #endif
 
+#ifndef ON
+#define ON 1  /**< Enable. */
+#endif
+
+#ifndef OFF
+#define OFF 0 /**< Disable. */
+#endif
+
 /**
     Event callback function.
     

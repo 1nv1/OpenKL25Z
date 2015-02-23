@@ -67,6 +67,8 @@ INCLUDES = \
 			app_menu.h		\
 			common.h		\
 			driver_ADC.h	\
+#			driver_LPTMR.h	\
+			driver_SYSTICK.h\
 			freedom.h		\
 			pt.h			\
 			pt-sem.h		\
@@ -93,8 +95,8 @@ clean:
 %.srec: %.out
 	$(OBJCOPY) -O srec $< $@
 
-%.out: %.o mkl25z4.ld libbare.a
-	$(CC) $(CFLAGS) -T mkl25z4.ld -o $@ $< libbare.a
+%.out: %.o OpenKL25Z.ld libbare.a
+	$(CC) $(CFLAGS) -T OpenKL25Z.ld -o $@ $< libbare.a
 
 # -----------------------------------------------------------------------------
 # Burn/deploy by copying to the development board filesystem

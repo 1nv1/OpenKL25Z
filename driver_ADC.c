@@ -56,14 +56,6 @@ void ADC_IRQHandler()
     ADC0_SC1A &= ~ADC_SC1_AIEN_MASK;
 }
 
-void adc_init (void) 
-{
-    /* ADC0 Clock Gate Control (27 bit). 
-     * This bit controls the clock gate to the ADC0 module.
-     */
-    SIM_SCGC6 |= SIM_SCGC6_ADC0_MASK;
-}
-
 /**
     \brief Update CFG to select the input clock source and the divide
     ratio used to generate ADCK. This register is also used for 
