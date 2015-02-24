@@ -10,36 +10,7 @@
 */
 /**
     \mainpage OpenKL25Z4
-    
-    Introduction
-    ============
-
-    The goal of this project is make a single framework to learn about microcontroller Cortex-M0+. 
-    The project is based on [bare-metal ARM](https://github.com/payne92/bare-metal-arm). In this moment I work actively in add the funcionality that I want. This is a "bare metal" runtime for the 
-    [Freescale Freedom FRDM-KL25Z](http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=FRDM-KL25Z) 
-    ARM development board ($12.95 at ). It builds with the GCC ARM toolchain, with no other external dependencies.
-
-    Quick start on Linux:
-    
-    + Clone the repo: `git clonehttps://github.com/1nv1/OpenKL25Z4`
-    + Grab and unpack GCC ARM toolchain:
-        + On Ubuntu/Debian/Fedora: `sudo apt-get install gcc-arm-none-eabi` also you can use `make gcc-arm` to download it 
-    + Mount the `FRDM-KL25Z` in your system 
-    + For compile the example and burn it into the board, execute `make burn` (On other systems copy the .SREC file to the FRDM-KL25Z volume.)
-    + If everything is working, the RGB LEB will flash very quickly
-    + Now you can interact with the program using `screen` command: `screen /dev/ttyACM0 155200`
-    + Using the capacitive touch you can navigate for the menu and select items. The part of capacitive sensor near of QR code in the board is for navigate, the rest is for select action
-
-    References:
-    
-    + [Freescale Freedom FRDM-KL25Z](http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=FRDM-KL25Z)
-        + Where to buy: [Newark](http://www.newark.com/jsp/search/productdetail.jsp?SKU=28W5033&CMP=KNC-GPLA&mckv=|pcrid|27090073701|plid|),
-    [Digi-Key](http://www.digikey.com/product-detail/en/FRDM-KL25Z/FRDM-KL25Z-ND/3529594?WT.mc_id=PLA_3529594)
-    + [KL25 Sub-Family Reference Manual](http://cache.freescale.com/files/32bit/doc/ref_manual/KL25P80M48SF0RM.pdf)
-    + [GCC ARM toolchain](https://launchpad.net/gcc-arm-embedded)
-    + [Newlib C library](http://sourceware.org/newlib/)
-
-    \license This project is released under the MIT License.
+    \include README.md
     \include LICENSE
 */
 /* For use the debug mode use it:
