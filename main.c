@@ -23,13 +23,12 @@
     
     + Clone the repo: `git clonehttps://github.com/1nv1/OpenKL25Z4`
     + Grab and unpack GCC ARM toolchain:
-        + On Ubuntu/Debian/Fedora: `sudo apt-get install gcc-arm-none-eabi`
-    + `make`
-
-    This will create a `main.srec` image file to flash onto the development board.  (If you're using the standard bootloader, plug the SDA USB port to a host computer.  On Linux, type `make deploy` or you can use `make burn`, that command has the same effect that `make clean && make && make deploy`.  On other systems,copy the .SREC file to the FRDM-KL25Z volume.)
-    
-    If everything is working, the RGB LEB will flash a few times and then be steady green.  You can access the USB 
-    SDA serial port (at 115,200 baud) and see the conversion of ADC of input 8 in single mode.
+        + On Ubuntu/Debian/Fedora: `sudo apt-get install gcc-arm-none-eabi` also you can use `make gcc-arm` to download it 
+    + Mount the `FRDM-KL25Z` in your system 
+    + For compile the example and burn it into the board, execute `make burn` (On other systems copy the .SREC file to the FRDM-KL25Z volume.)
+    + If everything is working, the RGB LEB will flash very quickly
+    + Now you can interact with the program using `screen` command: `screen /dev/ttyACM0 155200`
+    + Using the capacitive touch you can navigate for the menu and select items. The part of capacitive sensor near of QR code in the board is for navigate, the rest is for select action
 
     References:
     
