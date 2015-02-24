@@ -91,14 +91,15 @@ void SysTick_Handler() __attribute__((interrupt("IRQ")));
 // Main program
 int main(void)
 {
-    // Initialize all modules
-    adc_init();
-    uart_init(115200);
-    accel_init();
-    touch_init((1 << 9) | (1 << 10));       // Channels 9 and 10
-    // usb_init();
-    setvbuf(stdin, NULL, _IONBF, 0);        // No buffering
-
+    /*
+     * Configuring SysTick
+     */
+    systick_reload_value((CORE_CLOCK/10u) - 1); // 10 Hz
+    systick_counter_value(0);
+    systick_clock_source(CLOCK_SOURCE_PROCESSOR);
+    systick_enable(ON); 
+    systick_int(ON);
+    
     /* 
      * Configuring ADC
      */
@@ -108,17 +109,19 @@ int main(void)
     adc_control_1 (ADC_TRIGGER_SOFTWARE, ADC_COMPARE_DISABLE, ADC_GREATER_THAN, ADC_COMP_RANGE_CV1, ADC_DMA_DISABLE, ADC_COMP_REF_VOL_DEFAULT);
     adc_control_2 (ADC_OP_SINGLE, ADC_AVERAGE_DISABLE, ADC_HARDWARE_AVERAGE_4);
     adc_control_channel (ADC_INPUT_SINGLE, ADC_AD8);
-    
-    /*
-     * Configuring SysTick
-     */
-    systick_reload_value((CORE_CLOCK/10u) - 1); // 10 Hz
-    systick_counter_value(0);
-    systick_clock_source(CLOCK_SOURCE_PROCESSOR);
-    systick_int(ON);
-    systick_enable(ON); 
 
-    // Run tests
+    /*
+     * Initialization of left modules
+     */
+    uart_init(115200);
+    accel_init();
+    touch_init((1 << 9) | (1 << 10));       // Channels 9 and 10
+    // usb_init();
+    setvbuf(stdin, NULL, _IONBF, 0);        // No buffering
+
+    /*
+     * Run tests
+     */
     tests();
 
     /* 
@@ -371,6 +374,7 @@ void SysTick_Handler() {
     //pthCollectorFlag  = FALSE;
 }
 
+#ifdef DEBUG_MODE
 static uint32_t pthMonitor (struct pt *pt)
 {
     /* A protothread function must begin with PT_BEGIN() which takes a
@@ -390,44 +394,10 @@ static uint32_t pthMonitor (struct pt *pt)
         blink (FAULT_SLOW_BLINK, 10);
         RGB_LED(0, 0b1100110011001100, 0); 
     }
-    //pthScanAdcFlag    = FALSE;
-    //pthScanAccelFlag  = FALSE;
-    //pthScanTouchFlag  = FALSE;
+    pthScanAdcFlag    = FALSE;
+    pthScanAccelFlag  = FALSE;
+    pthScanTouchFlag  = FALSE;
     PT_END(pt);
-}
-
-    /*  
-        SysTick usage hints and tips
-        ----------------------------
-        The interrupt controller clock updates the SysTick counter. Some
-        implementations stop this clock signal for low power mode. If
-        this happens, the SysTick counter stops.
-        Ensure software uses word accesses to access the SysTick
-        registers.
-        The SysTick counter reload and current value are not initialized
-        by hardware. This means the correct initialization sequence for
-        the SysTick counter is:
-            1. Program the reload value.
-            2. Clear the current value.
-            3. Program the Control and Status register.
-    */
-
-    //SIM_SOPT1 &= ~SIM_SOPT1_OSC32KSEL_MASK;
-    //SIM_SOPT1 |= (3 << SIM_SOPT1_OSC32KSEL_SHIFT) & SIM_SOPT1_OSC32KSEL_MASK;
-    // Configuration of Low Power Timer
-    //lptmr_init();
-    //SIM_SCGC5 &= ~SIM_SCGC5_LPTMR_MASK;
-    //SIM_SOPT1 |= SIM_SOPT1_OSC32KSEL_MASK;
-    //lptmr_enable(OFF); // First, disabled the timer
-    //lptmr_mode_select(LPTMR_TIME_COUNTER_MODE);
-    //lptmr_free_running_counter(LPTMR_COUNTER_RESET_OVERFLOW);    
-    //lptmr_prescale_clock_select(1);
-    //lptmr_prescale(0x00);
-    //lptmr_prescale_bypass(OFF);
-    //lptmr_compare_value(1000);
-    //lptmr_counter_value(10);
-    //lptmr_enable(ON); // Enable the timer
-    //lptmr_interrupt_enable(ON);
-    //LPTMR0_CSR &= ~LPTMR_CSR_TIE_MASK;
-    
+}  
+#endif  
 /* End of main.c */
