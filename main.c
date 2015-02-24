@@ -94,7 +94,7 @@ int main(void)
     /*
      * Configuring SysTick
      */
-    systick_reload_value((CORE_CLOCK/10u) - 1); // 10 Hz
+    systick_reload_value(systick_tenms()); // 100 Hz
     systick_counter_value(0);
     systick_clock_source(CLOCK_SOURCE_PROCESSOR);
     systick_enable(ON); 
@@ -371,7 +371,6 @@ void SysTick_Handler() {
     pthScanAdcFlag    = FALSE;
     pthScanAccelFlag  = FALSE;
     pthScanTouchFlag  = FALSE;
-    //pthCollectorFlag  = FALSE;
 }
 
 #ifdef DEBUG_MODE

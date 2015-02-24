@@ -107,7 +107,8 @@
     An inexact TENMS value can affect the suitability of SysTick as a
     software real time clock.
 */
-#define systick_skew(x)
+#define systick_skew()                                                  \
+    ((uint32_t)((SYST_CALIB & SysTick_CALIB_SKEW_MASK) >> SysTick_CALIB_SKEW_SHIFT))
 
 
 /** 
@@ -115,9 +116,8 @@
     skew errors.
     If the value reads as zero, the calibration value is not known.
 */
-#define systick_tenms(x)                                                \
-    SYST_CALIB &= ~SysTick_CALIB_TENMS_MASK;                            \
-    SYST_CALIB |= (SysTick_CALIB_TENMS_MASK & ((uint32_t)(x) << SysTick_CALIB_TENMS_SHIFT));
+#define systick_tenms()                                                \
+    ((uint32_t)((SYST_CALIB & SysTick_CALIB_TENMS_MASK) >> SysTick_CALIB_TENMS_SHIFT))
 
 /** @} */ // KL25Z_SYSTICK
 
