@@ -25,7 +25,7 @@ inline void i2c_set_slave(I2C_MemMapPtr p)  {p->C1 &= ~I2C_C1_MST_MASK;}
 inline void i2c_set_master(I2C_MemMapPtr p) {p->C1 |=  I2C_C1_MST_MASK;}
 inline void i2c_give_nack(I2C_MemMapPtr p)  {p->C1 |= I2C_C1_TXAK_MASK;}
 inline void i2c_give_ack(I2C_MemMapPtr p)   {p->C1 &= ~I2C_C1_TXAK_MASK;}
-inline void i2c_repeated_start(I2C_MemMapPtr p){p->C1     |= I2C_C1_RSTA_MASK;}
+inline void i2c_repeated_start(I2C_MemMapPtr p){p->C1 |= I2C_C1_RSTA_MASK;}
 inline uint8_t i2c_read(I2C_MemMapPtr p)    {return p->D;}
 
 inline void i2c_start(I2C_MemMapPtr p)
