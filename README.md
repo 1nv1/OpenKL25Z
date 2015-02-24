@@ -11,13 +11,13 @@ ARM development board ($12.95 at ). It builds with the GCC ARM toolchain, with n
 
 Quick start on Linux:
 
-+ Clone the repo: `git clonehttps://github.com/1nv1/OpenKL25Z4`
++ Clone the repo: `git clone https://github.com/1nv1/OpenKL25Z4`
 + Grab and unpack GCC ARM toolchain:
-    + On Ubuntu/Debian/Fedora: `sudo apt-get install gcc-arm-none-eabi` also you can use `make gcc-arm` to download it 
+    + On Ubuntu/Debian/Fedora: `sudo apt-get install gcc-arm-none-eabi` also you can use `$ make gcc-arm` to download it 
 + Mount the `FRDM-KL25Z` in your system 
-+ For compile the example and burn it into the board, execute `make burn` (On other systems copy the .SREC file to the FRDM-KL25Z volume.)
++ For compile the example and burn it into the board, execute `$ make burn` (On other systems copy the .SREC file to the FRDM-KL25Z volume.)
 + If everything is working, the RGB LEB will flash very quickly
-+ Now you can interact with the program using `screen` command: `screen /dev/ttyACM0 155200`
++ Now you can interact with the program using `screen` command: `$ screen /dev/ttyACM0 115200`
 + Using the capacitive touch you can navigate for the menu and select items. The part of capacitive sensor near of QR code in the board is for navigate, the rest is for select action
 
 References:
@@ -60,6 +60,11 @@ In this case:
 
 History
 -------
+
+* 0.0.2 (02/20/2015)
+    * Several improvements
+    * Driver for SysTick timer
+    * Better example to run
 
 * 0.0.1 (02/12/2015)
     * A new repository was created and it is called OpenKL25Z.
