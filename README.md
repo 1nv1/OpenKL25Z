@@ -14,6 +14,7 @@ Quick start on Linux:
 + Clone the repo: `git clone https://github.com/1nv1/OpenKL25Z4`
 + Grab and unpack GCC ARM toolchain:
     + On Ubuntu/Debian/Fedora: `sudo apt-get install gcc-arm-none-eabi` also you can use `$ make gcc-arm` to download it 
++ Important! For use the board under Linux do you need update the OpenSDA [firmware](http://www.pemicro.com/blog/index.cfm?post_id=11)
 + Mount the `FRDM-KL25Z` in your system 
 + For compile the example and burn it into the board, execute `$ make burn` (On other systems copy the .SREC file to the FRDM-KL25Z volume.)
 + If everything is working, the RGB LEB will flash very quickly
