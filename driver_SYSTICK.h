@@ -79,7 +79,8 @@ extern inline uint32_t systick_counter_flag (void) {
     interrupt is required every 100 clock pulses, set RELOAD to 99.
 */
 extern inline void systick_reload_value (uint32_t value) {
-    SysTick_RVR_RELOAD (value);
+    SYST_RVR &= ~SysTick_RVR_RELOAD_MASK;
+    SYST_RVR |= SysTick_RVR_RELOAD (value);
 }
 
 //  SysTick Current Value Register
@@ -111,7 +112,9 @@ extern inline uint32_t systick_no_ref (void) {
     as a software real time clock.
 */
 extern inline uint32_t systick_skew (void) {
-    return ((uint32_t)((SYST_CALIB & SysTick_CALIB_SKEW_MASK) >> SysTick_CALIB_SKEW_SHIFT));
+	SYST_CVR &= ~SysTick_CVR_CURRENT_MASK;
+	SYST_CVR |= (SysTick_CVR_CURRENT_MASK & (((SYST_CALIB & SysTick_CALIB_SKEW_MASK) >> SysTick_CALIB_SKEW_SHIFT)) << SysTick_CVR_CURRENT_SHIFT);
+    //return ((uint32_t)((SYST_CALIB & SysTick_CALIB_SKEW_MASK) >> SysTick_CALIB_SKEW_SHIFT));
 }
 
 /** 
