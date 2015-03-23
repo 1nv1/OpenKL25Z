@@ -13,7 +13,11 @@ body {
 .container {
   width: 90%;
   //max-width: 2500px;
-  margin: 0 auto;
+  margin: 0 0 20px;
+  border-right: 0px;
+  border-left: 20px;
+  margin-left: 5%;
+  float: left;
 }
 
 section {
@@ -38,7 +42,7 @@ li {
 header {
   background: rgba(0, 0, 0, 0.1);
   width: 100%;
-  border-bottom: 1px dashed #b5e853;
+  //border-bottom: 1px dashed #b5e853;
   padding: 20px 0;
   margin: 0 0 40px 0;
 }
@@ -128,7 +132,7 @@ dt {
   font-style: italic;
   font-weight: bold;
 }
-
+/*
 ul li {
   list-style: none;
 }
@@ -142,7 +146,7 @@ ul li:before {
   margin-right: 21px;
   line-height: 16px;
 }
-
+*/
 blockquote {
   color: #aaa;
   padding-left: 10px;

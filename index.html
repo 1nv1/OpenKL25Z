@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="stylesheets/tree.css" media="screen">
     <title>OpenKL25Z by 1nv1</title>
   </head>
 
@@ -15,30 +16,76 @@
     <header>
       <div class="container">
         <h1>OpenKL25Z</h1>
-        <center>
-        <div style="width:75%;">
-        <table border="0">
-            <tr>
-                <td><h2>OpenKL25Z is a bare-metal framework for educational purposes (and to have fun too) to develop with Freescale FRDM-KL25Z prototyping board.</h2></td>
-                <td><img src="images/kl25z.gif" alt="KL25Z" height=128></td>
-            </tr>
-        </table>
-        </center>
+            <div style="width:100%;" align="center">
+                <table border="0">
+                    <tr>
+                        <td><h2>OpenKL25Z is a bare-metal framework for educational purposes (and to have fun too) to develop with Freescale FRDM-KL25Z prototyping board.</h2></td>
+                        <td><img src="images/kl25z.gif" alt="KL25Z" height=128></td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <!--
+            We will create a family tree using just CSS(3)
+            The markup will be simple nested lists
+            -->
+            <table border="0">
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <div style="width:100%" align="center">
+                            <div class="tree">   
+                                <ul>
+                                    <li>
+                                        <a href="http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=FRDM-KL25Z" target="_blank">FRDM-KL25Z</a>
+                                        <ul>
+                                            <li>
+                                                <a href="http://cache.freescale.com/files/32bit/doc/ref_manual/KL25P80M48SF0RM.pdf" target="_blank">Ref. manual</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://launchpad.net/gcc-arm-embedded" target="_blank">GCC ARM toolchain</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="http://sourceware.org/newlib/" target="_blank">Newlib C library</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="https://github.com/payne92/bare-metal-arm" target="_blank">bare-metal ARM</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="https://github.com/1nv1/OpenKL25Z" target="_blank">OpenKL25Z</a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="http://openocd.org/" target="_blank">OpenOCD</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://mcuoneclipse.com/" target="_blank">MCU on Eclipse</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://karibe.co.ke/2013/08/setting-up-linux-opensource-build-and-debug-tools-for-freescale-freedom-board-frdm-kl25z/" target="_blank">Setting up</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <section id="downloads">
-          <center>
-          <a href="https://github.com/1nv1/OpenKL25Z/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/1nv1/OpenKL25Z/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/1nv1/OpenKL25Z" class="btn btn-github" target="_blank"><span class="icon"></span>View on GitHub</a>
-          </center>
-        </section>
-      </div>
     </header>
-   
-    <div class="container">
+
+    <p><div class="container">
       <section id="main_content">
         <h2><a id="user-content-introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
-
+</p>
 <p>!!! Warning !!! This project is under hard construction. If well is possible to use it, I do not recommend for any without advance experience with Linux/ARM/GCC.</p>
 
 <p>The goal of this project is make a single framework to learn about microcontroller Cortex-M0+. The project is based on <a href="https://github.com/payne92/bare-metal-arm" target="_blank">bare-metal ARM</a>. In this moment I work actively in add the funcionality that I want. This is a "bare metal" runtime for the <a href="http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=FRDM-KL25Z" target="_blank">Freescale Freedom FRDM-KL25Z</a> ARM development board ($12.95 at ). It builds with the GCC ARM toolchain, with no other external dependencies.</p>
@@ -64,6 +111,13 @@
 <li>Using the capacitive touch you can navigate for the menu and select items. The part of capacitive sensor near of QR code in the board is for navigate, the rest is for select action</li>
 </ul>
 
+<h2><a id="downloads" class="anchor" href="#downloads" aria-hidden="true"><span class="octicon octicon-link"></span></a>Downloads</h2>
+    <center>
+    <a href="https://github.com/1nv1/OpenKL25Z/zipball/master" class="btn">Download as .zip</a>
+    <a href="https://github.com/1nv1/OpenKL25Z/tarball/master" class="btn">Download as .tar.gz</a>
+    <a href="https://github.com/1nv1/OpenKL25Z" class="btn btn-github" target="_blank"><span class="icon"></span>View on GitHub</a>
+    </center>
+
 <!--
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
@@ -71,7 +125,7 @@ $ git checkout gh-pages
 </code></pre>
 -->
 
-<p>References:</p>
+<h2><a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
 
 <ul class="task-list">
 <li>
