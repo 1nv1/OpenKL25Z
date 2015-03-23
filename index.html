@@ -36,6 +36,7 @@
                     </td>
                     <td>
                         <div style="width:100%" align="center">
+                            <!-- http://thecodeplayer.com/walkthrough/css3-family-tree -->
                             <div class="tree">   
                                 <ul>
                                     <li>
@@ -92,24 +93,39 @@
 
 <p>Quick start on Linux:</p>
 
-<ul class="task-list">
-<li>Clone the repo: <code>git clone https://github.com/1nv1/OpenKL25Z4</code>
-</li>
-<li>Grab and unpack GCC ARM toolchain:
-
-<ul class="task-list">
-<li>On Ubuntu/Debian/Fedora: <code>sudo apt-get install gcc-arm-none-eabi</code> also you can use <code>$ make gcc-arm</code> to download it </li>
-</ul>
-</li>
-<li>Important! For use the board under Linux do you need update the OpenSDA <a href="http://www.pemicro.com/blog/index.cfm?post_id=11">firmware</a>
-</li>
-<li>Mount the <code>FRDM-KL25Z</code> in your system </li>
-<li>For compile the example and burn it into the board, execute <code>$ make burn</code> (On other systems copy the .SREC file to the FRDM-KL25Z volume.)</li>
-<li>If everything is working, the RGB LEB will flash very quickly</li>
-<li>Now you can interact with the program using <code>screen</code> command: <code>$ screen /dev/ttyACM0 115200</code>
-</li>
-<li>Using the capacitive touch you can navigate for the menu and select items. The part of capacitive sensor near of QR code in the board is for navigate, the rest is for select action</li>
-</ul>
+<div class="std">
+    <ul class="task-list">
+        <li>
+            Clone the repo: <code>git clone https://github.com/1nv1/OpenKL25Z4</code>
+        </li>
+        <li>
+            Grab and unpack GCC ARM toolchain:
+            <ul>
+                <li>
+                    On Ubuntu/Debian/Fedora: <code>sudo apt-get install gcc-arm-none-eabi</code> also you can use <code>$ make gcc-arm</code> to download it
+                </li>
+            </ul>
+        </li>
+        <li>
+            Important! For use the board under Linux do you need update the OpenSDA <a href="http://www.pemicro.com/blog/index.cfm?post_id=11">firmware</a>
+        </li>
+        <li>
+            Mount the <code>FRDM-KL25Z</code> in your system
+        </li>
+        <li>
+            For compile the example and burn it into the board, execute <code>$ make burn</code> (On other systems copy the .SREC file to the FRDM-KL25Z volume.)
+        </li>
+        <li>
+            If everything is working, the RGB LEB will flash very quickly
+        </li>
+        <li>
+            Now you can interact with the program using <code>screen</code> command: <code>$ screen /dev/ttyACM0 115200</code>
+        </li>
+        <li>
+            Using the capacitive touch you can navigate for the menu and select items. The part of capacitive sensor near of QR code in the board is for navigate, the rest is for select action
+        </li>
+    </ul>
+</div>
 
 <h2><a id="downloads" class="anchor" href="#downloads" aria-hidden="true"><span class="octicon octicon-link"></span></a>Downloads</h2>
     <center>
@@ -127,31 +143,33 @@ $ git checkout gh-pages
 
 <h2><a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
 
-<ul class="task-list">
-<li>
-<a href="http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=FRDM-KL25Z">Freescale Freedom FRDM-KL25Z</a>
-
-<ul class="task-list">
-<li>Where to buy: <a href="http://www.newark.com/jsp/search/productdetail.jsp?SKU=28W5033&amp;CMP=KNC-GPLA&amp;mckv=%7Cpcrid%7C27090073701%7Cplid%7C" target="_blank">Newark</a>,
-<a href="http://www.digikey.com/product-detail/en/FRDM-KL25Z/FRDM-KL25Z-ND/3529594?WT.mc_id=PLA_3529594" target="_blank">Digi-Key</a>
-</li>
-</ul>
-</li>
-<li><a href="http://cache.freescale.com/files/32bit/doc/ref_manual/KL25P80M48SF0RM.pdf" target="_blank">KL25 Sub-Family Reference Manual</a></li>
-<li><a href="https://launchpad.net/gcc-arm-embedded" target="_blank">GCC ARM toolchain</a></li>
-<li><a href="http://sourceware.org/newlib/" target="_blank">Newlib C library</a></li>
-</ul>
+<div class="std">
+    <ul class="task-list">
+        <li>
+            <a href="http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=FRDM-KL25Z">Freescale Freedom FRDM-KL25Z</a>
+                <ul class="task-list">
+                    <li>Where to buy: <a href="http://www.newark.com/jsp/search/productdetail.jsp?SKU=28W5033&amp;CMP=KNC-GPLA&amp;mckv=%7Cpcrid%7C27090073701%7Cplid%7C" target="_blank">Newark</a>, <a href="http://www.digikey.com/product-detail/en/FRDM-KL25Z/FRDM-KL25Z-ND/3529594?WT.mc_id=PLA_3529594" target="_blank">Digi-Key</a>
+                    </li>
+                </ul>
+        </li>
+        <li><a href="http://cache.freescale.com/files/32bit/doc/ref_manual/KL25P80M48SF0RM.pdf" target="_blank">KL25 Sub-Family Reference Manual</a></li>
+        <li><a href="https://launchpad.net/gcc-arm-embedded" target="_blank">GCC ARM toolchain</a></li>
+        <li><a href="http://sourceware.org/newlib/" target="_blank">Newlib C library</a></li>
+    </ul>
+</div>
 
 <h2>
 <a id="user-content-walkthrough" class="anchor" href="#walkthrough" aria-hidden="true"><span class="octicon octicon-link"></span></a>Walkthrough</h2>
 
 <p>The interrupt vectors and reset code are in <code>_startup.c</code>.  The CPU comes out of reset in <code>_reset_init()</code> which:</p>
 
-<ul class="task-list">
-<li>Copies initialized constant values from flash ROM to RAM</li>
-<li>Configures the main clock (48Mhz)</li>
-<li>Jumps to <code>_start()</code> in the Newlib C library</li>
-</ul>
+<div class="std">
+    <ul class="task-list">
+    <li>Copies initialized constant values from flash ROM to RAM</li>
+    <li>Configures the main clock (48Mhz)</li>
+    <li>Jumps to <code>_start()</code> in the Newlib C library</li>
+    </ul>
+</div>
 
 <p>After the C library is done initializing, it invokes <code>main()</code> (implemented in <code>main.c</code>).
 Also I promote the use of protothreads with this «framework». </p>
@@ -163,6 +181,7 @@ Also I promote the use of protothreads with this «framework». </p>
 <h2>
 <a id="user-content-history" class="anchor" href="#history" aria-hidden="true"><span class="octicon octicon-link"></span></a>History</h2>
 
+<div class="std">
 <ul class="task-list">
 <li>0.0.2 (02/20/2015)
 <ul class="task-list">
@@ -202,6 +221,7 @@ the license of them are "open/free" style.</li>
 </ul>
 </li>
 </ul>
+</div>
 
 <h2>
 <a id="user-content-contact" class="anchor" href="#contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contact</h2>

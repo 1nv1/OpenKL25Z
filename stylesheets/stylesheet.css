@@ -132,12 +132,12 @@ dt {
   font-style: italic;
   font-weight: bold;
 }
-/*
-ul li {
+
+.std ul li {
   list-style: none;
 }
 
-ul li:before {
+.std ul li:before {
   content: ">>";
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 13px;
@@ -146,7 +146,7 @@ ul li:before {
   margin-right: 21px;
   line-height: 16px;
 }
-*/
+
 blockquote {
   color: #aaa;
   padding-left: 10px;
