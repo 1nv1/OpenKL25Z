@@ -18,7 +18,6 @@
     list-style-type: none;
     position: relative;
     padding: 20px 5px 0 5px;
-    
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -76,10 +75,11 @@ right connector from last child*/
     border: 1px solid #ccc;
     padding: 5px 10px;
     text-decoration: none;
-    color: #666;
+    //color: #666;
     font-family: arial, verdana, tahoma;
     font-size: 11px;
     display: inline-block;
+    color: #b5e853;
     
     border-radius: 5px;
     -webkit-border-radius: 5px;
