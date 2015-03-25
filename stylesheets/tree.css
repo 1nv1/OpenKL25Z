@@ -1,13 +1,19 @@
 /*Now the CSS*/
 
 .tree {
-  left: 0;
-  margin-left: 10%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100%;
 }
 
 .tree ul {
     padding-top: 20px; position: relative;
-    
+    /* Skinny tree */
+    padding-left: 5px;
+    padding-right: 5px;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -17,7 +23,7 @@
     float: left; text-align: center;
     list-style-type: none;
     position: relative;
-    padding: 20px 5px 0 5px;
+    padding: 20px 5px 0 0px;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -29,10 +35,12 @@
     content: '';
     position: absolute; top: 0; right: 50%;
     border-top: 1px solid #ccc;
-    width: 50%; height: 20px;
+    width: 50%; 
+    height: 20px;
 }
 .tree li::after{
-    right: auto; left: 50%;
+    right: 50%; 
+    left: 50%;
     border-left: 1px solid #ccc;
 }
 
@@ -68,7 +76,7 @@ right connector from last child*/
     content: '';
     position: absolute; top: 0; left: 50%;
     border-left: 1px solid #ccc;
-    width: 0; height: 20px;
+    width: 0px; height: 20px;
 }
 
 .tree li a{
