@@ -40,15 +40,26 @@
                                             <li>
                                                 <a href="http://developer.mbed.org/platforms/KL25Z/" target="_blank">Overview</a>
                                             </li>
+                                            <li>
+                                                <a href="http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=FRDM-KL25Z&cof=0&am=0&tab=Buy_Parametric_Tab&fromSearch=false" target="_blank">Specs</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="http://www.newark.com/jsp/search/productdetail.jsp?SKU=28W5033&CMP=KNC-GPLA&mckv=%7Cpcrid%7C27090073701%7Cplid%7C" target="_blank">Newark</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://www.digikey.com/product-detail/en/FRDM-KL25Z/FRDM-KL25Z-ND/3529594?WT.mc_id=PLA_3529594" target="_blank">Digi-Key</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="https://launchpad.net/gcc-arm-embedded" target="_blank">GCC ARM toolchain</a>
+                                <a href="https://launchpad.net/gcc-arm-embedded" target="_blank">GCC ARM</a>
                                 <ul>
                                     <li>
-                                        <a href="http://sourceware.org/newlib/" target="_blank">Newlib C library</a>
+                                        <a href="http://sourceware.org/newlib/" target="_blank">Newlib C</a>
                                     </li>
                                 </ul>
                             </li>
@@ -75,7 +86,7 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="http://mcuoneclipse.com/" target="_blank">MCU on Eclipse</a>
+                                                <a href="http://mcuoneclipse.com/" target="_blank">MCUonEclipse</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -157,32 +168,7 @@
     <a href="https://github.com/1nv1/OpenKL25Z" class="btn btn-github" target="_blank"><span class="icon"></span>View on GitHub</a>
     </center>
 
-<!--
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
--->
-
-<h2><a id="references" class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
-
-<div class="std">
-    <ul class="task-list">
-        <li>
-            <a href="http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=FRDM-KL25Z">Freescale Freedom FRDM-KL25Z</a>
-                <ul class="task-list">
-                    <li>Where to buy: <a href="http://www.newark.com/jsp/search/productdetail.jsp?SKU=28W5033&amp;CMP=KNC-GPLA&amp;mckv=%7Cpcrid%7C27090073701%7Cplid%7C" target="_blank">Newark</a>, <a href="http://www.digikey.com/product-detail/en/FRDM-KL25Z/FRDM-KL25Z-ND/3529594?WT.mc_id=PLA_3529594" target="_blank">Digi-Key</a>
-                    </li>
-                </ul>
-        </li>
-        <li><a href="http://cache.freescale.com/files/32bit/doc/ref_manual/KL25P80M48SF0RM.pdf" target="_blank">KL25 Sub-Family Reference Manual</a></li>
-        <li><a href="https://launchpad.net/gcc-arm-embedded" target="_blank">GCC ARM toolchain</a></li>
-        <li><a href="http://sourceware.org/newlib/" target="_blank">Newlib C library</a></li>
-    </ul>
-</div>
-
-<h2>
-<a id="user-content-walkthrough" class="anchor" href="#walkthrough" aria-hidden="true"><span class="octicon octicon-link"></span></a>Walkthrough</h2>
+<h2><a id="user-content-walkthrough" class="anchor" href="#walkthrough" aria-hidden="true"><span class="octicon octicon-link"></span></a>Walkthrough</h2>
 
 <p>The interrupt vectors and reset code are in <code>_startup.c</code>.  The CPU comes out of reset in <code>_reset_init()</code> which:</p>
 
